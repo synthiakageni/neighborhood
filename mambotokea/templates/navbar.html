@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'home' %}">Neighbourhood</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+        <form class="d-flex" action="{% url 'home' %}" method="GET">
+            <input class="form-control me-2" name='q' type="search" placeholder="Search" aria-label="Search">
+        </form>
+
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li>
+          {% if request.user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">logout</a>
+          </li>
+          <li>
+            <a href="{% url 'user_profile' user.id %}" class="nav-link">Hey {{ user.username }}</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">login</a>
+          </li>
+          {% endif %}          
+        </ul>
+      </div>
+    </div>
+  </nav>
