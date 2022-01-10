@@ -40,7 +40,7 @@ To fix a bug or enhance an existing module, follow these steps:
 - Commit your changes (git commit -am 'Improve feature')
 - Push to the branch (git push origin improve-feature)
 - Create a Pull Request
-## [Live link](https://powerful-journey-84004.herokuapp.com/)
+## [Live link]()
 ## Known Bugs
 
 There are no known bugs.

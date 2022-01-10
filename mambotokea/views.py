@@ -36,7 +36,7 @@ def loginPage(request):
     context = {
         'page':page
     }
-    return render(request, 'app/login_register.html', context)
+    return render(request, 'app/login.html', context)
 
 
 def logoutUser(request):
@@ -63,7 +63,7 @@ def registerUser(request):
         'page':page
     }
 
-    return render(request, 'app/login_register.html', context)
+    return render(request, 'app/login.html', context)
 
 
 def home(request):
@@ -103,7 +103,7 @@ def hood(request, pk):
         'occupants':occupants,
         'businesses':businesses
     }
-    return render(request, 'app/hood.html', context)
+    return render(request, 'app/neighbourhood.html', context)
 
 
 def joinHood(request,pk):
@@ -115,7 +115,7 @@ def joinHood(request,pk):
        'hood':hood,
        'occupants':occupants 
     }
-    return render(request, 'app/hood.html', context)
+    return render(request, 'app/neighbourhood.html', context)
 
 
 def quitHood(request,pk):
@@ -165,14 +165,7 @@ def createBusiness(request, pk):
     form = BusinessForm()
     user = request.user
 
-    # if request.method == 'POST':
-    #     form = BusinessForm(request.POST)
-        # if form.is_valid():
-        #     business = form.save(commit=False)
-        #     business.owner = user
-        #     business.neighborhood = hood
-        #     business.save()
-        #     return redirect('home')
+    
     if request.method == 'POST':
         business = Business.objects.create (
             owner = user,
@@ -184,12 +177,7 @@ def createBusiness(request, pk):
         )
         return redirect('hood', pk=hood.id)
 
-        # if request.method == 'POST':
-        #     post = Post.objects.create(
-        #     user = request.user,
-        #     hood = hood,
-        #     body = request.POST.get('body')
-        # )
+       
     context = {
         'form':form,
         'hood': hood
@@ -259,11 +247,11 @@ def updateUser(request):
         form = UserForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
             form.save()
-            return redirect('user_profile', pk=user.id)
+            return redirect('profile', pk=user.id)
 
     context = {
         'form':form
     }
-    return render(request, 'app/update_user.html', context)
+    return render(request, 'app/userUpdate.html', context)
 
 
