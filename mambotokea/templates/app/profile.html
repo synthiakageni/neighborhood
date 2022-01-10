@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}     
+
+<div class='profile-container container'>
+    <div class="row">
+        <div class="col-md-3">
+            {% include 'app/location_component.html' %}
+        </div>
+    
+        <div class="col-md-6 profile-col">
+            <div class="user-profile my-2">
+                <img src="{{ user.profile_pic.url }}" alt="">
+            </div>
+            <h4>@{{ user.username }}</h4>
+            <a class='my-3' href="{% url 'update_user' %}">update profile</a>
+            <p>{{ user.bio }} </p>
+
+            <!-- {% include 'app/feed_component.html' %} -->
+        </div>
+    
+        <div class="col-md-3">
+            {% include 'app/activity_component.html' %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
