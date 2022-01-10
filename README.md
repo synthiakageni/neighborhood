@@ -1,7 +1,7 @@
 ### Project-Name
 Neighbourhood
 ### Description
-This is a  personal gallery application where I  post my photos.
+ This is a web application that allows the user to be in the loop about everything happening in their neighborhood. From contact information of different handyman to meeting announcements or even alerts.
 ### Author
 <a href="https://github.com/synthiakageni"> SYNTHIA KAGENI</a>
 
