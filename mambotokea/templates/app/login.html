@@ -6,28 +6,28 @@
 {% block content %}
 {% if page == 'login' %}
     <div class="login-page">
-        <h3>login</h3>
+        <h3><i>Sign In </i></h3>
         <form action="" method='post'>
             {% csrf_token %} 
             <div class="form-group">
-                <label>username:</label>
+                <label> <i>username:</i></label>
                 <input type="text" name='username' placeholder="Enter username">
             </div>
 
             <div class="form-group">
-                <label>username:</label>
+                <label><i>Password:</i></label>
                 <input type="password" name='password' placeholder="Enter password">
             </div>
             <input type="submit" value="login" class="login-btn">
         </form>
-        <p>Havent signed up yet?</p>
-        <a href="{% url 'register' %}">sign up</a>
+        <p>Not joined yet?</p>
+        <a href="{% url 'register' %}">Join</a>
     </div>
 
 {% else %}
     
     <div class="form-wrapper my-3">
-        <h3>register</h3>
+        <h3>sign up</h3>
         <form action="" method='post'>
             {% csrf_token %}  
             {% bootstrap_form form %}        

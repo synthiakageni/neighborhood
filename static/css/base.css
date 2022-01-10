@@ -1,0 +1,22 @@
+body {
+    background-color: aquamarine;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+}
+
+
+body > nav {
+    background-color: var(--antwerp-blue);
+    color: whitesmoke;
+}
+
+
+body > nav > div > a {
+    color: whitesmoke;
+    font-weight: 600;
+}
+
+
+body > nav > div > a:hover {
+    color: whitesmoke;
+}

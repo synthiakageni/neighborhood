@@ -9,6 +9,10 @@ psycopg2 = "*"
 pillow = "*"
 django-bootstrap4 = "*"
 bootstrap4 = "*"
+gunicorn = "*"
+whitenoise = "*"
+django-heroku = "*"
+python-decouple = "*"
 
 [dev-packages]
 
