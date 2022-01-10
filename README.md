@@ -1,5 +1,5 @@
 ### Project-Name
-Clicksgram
+Neighbourhood
 ### Description
 This is a  personal gallery application where I  post my photos.
 ### Author
