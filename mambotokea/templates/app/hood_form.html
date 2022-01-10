@@ -1,0 +1,18 @@
+{% extends 'base.html' %} 
+
+{% load bootstrap4 %}
+
+{% block content %}
+<div class="container">
+    <div class="form-wrapper my-3">
+        <h4>create hood</h4>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {% bootstrap_form form %}       
+
+            <input type="submit" value='submit' class="login-btn">
+        </form>
+    </div>
+</div>
+
+{% endblock %}
