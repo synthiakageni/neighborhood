@@ -36,7 +36,7 @@ def loginPage(request):
     context = {
         'page':page
     }
-    return render(request, 'app/login.html', context)
+    return render(request, 'login.html', context)
 
 
 def logoutUser(request):
@@ -63,7 +63,7 @@ def registerUser(request):
         'page':page
     }
 
-    return render(request, 'app/login.html', context)
+    return render(request, 'login.html', context)
 
 
 def home(request):
@@ -80,7 +80,7 @@ def home(request):
         'hood_count':hood_count, 
         'posts':posts
     }
-    return render(request, 'app/home.html', context)
+    return render(request, 'home.html', context)
 
 
 def hood(request, pk):
@@ -103,7 +103,7 @@ def hood(request, pk):
         'occupants':occupants,
         'businesses':businesses
     }
-    return render(request, 'app/neighbourhood.html', context)
+    return render(request, 'neighbourhood.html', context)
 
 
 def joinHood(request,pk):
@@ -115,7 +115,7 @@ def joinHood(request,pk):
        'hood':hood,
        'occupants':occupants 
     }
-    return render(request, 'app/neighbourhood.html', context)
+    return render(request, 'neighbourhood.html', context)
 
 
 def quitHood(request,pk):
@@ -128,7 +128,7 @@ def quitHood(request,pk):
         'occupants':occupants,
         'hood':hood
     }
-    return render(request, 'app/home.html', context)
+    return render(request, 'home.html', context)
 
 
 def userProfile(request , pk):
@@ -142,7 +142,7 @@ def userProfile(request , pk):
         'posts':posts,
         'locations':locations
     }
-    return render(request, 'app/profile.html', context)
+    return render(request, 'profile.html', context)
 
 
 @login_required(login_url='login')
@@ -157,7 +157,7 @@ def createHood(request):
             return redirect('home')
 
     context = {'form':form}
-    return render(request, 'app/hood_form.html', context)
+    return render(request, 'hood_form.html', context)
 
 @login_required(login_url='login')
 def createBusiness(request, pk):
@@ -182,7 +182,7 @@ def createBusiness(request, pk):
         'form':form,
         'hood': hood
     }
-    return render(request, 'app/create_business.html', context)
+    return render(request, 'create_business.html', context)
 
 
 @login_required(login_url='login')
@@ -201,7 +201,7 @@ def updateHood(request, pk):
     context = {
         'form':form
     }
-    return render(request, 'app/hood_form.html', context)
+    return render(request, 'hood_form.html', context)
 
 
 
@@ -218,7 +218,7 @@ def deleteHood(request, pk):
     context = {
 
     }
-    return render(request, 'app/delete.html', {'obj':hood})
+    return render(request, 'delete.html', {'obj':hood})
 
 
 
@@ -235,7 +235,7 @@ def deletePost(request, pk):
     context = {
 
     }
-    return render(request, 'app/delete.html', {'obj':post})
+    return render(request, 'delete.html', {'obj':post})
 
 
 
@@ -252,6 +252,6 @@ def updateUser(request):
     context = {
         'form':form
     }
-    return render(request, 'app/userUpdate.html', context)
+    return render(request, 'userUpdate.html', context)
 
 
