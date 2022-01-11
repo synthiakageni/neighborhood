@@ -13,7 +13,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 import django_heroku
-
+import cloudinary
+from decouple import config, Csv
 
 
 
@@ -39,6 +40,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'mambotokea',
     'bootstrap4',
+    'cloudinary',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -138,6 +140,13 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
+
+
+cloudinary.config(
+  cloud_name = config('CLOUDINARY_NAME'),
+  api_key = config('CLOUDINARY_API_KEY'),
+  api_secret = config('CLOUDINARY_SECRET')
+)
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 

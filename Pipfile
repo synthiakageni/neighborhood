@@ -14,6 +14,7 @@ whitenoise = "*"
 python-decouple = "*"
 django-heroku = "*"
 dj-database-url = "*"
+django-cloudinary-storage = "*"
 
 [dev-packages]
 
