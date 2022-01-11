@@ -247,7 +247,7 @@ def updateUser(request):
         form = UserForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
             form.save()
-            return redirect('profile', pk=user.id)
+            return redirect('user_profile', pk=user.id)
 
     context = {
         'form':form

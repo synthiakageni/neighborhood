@@ -6,9 +6,7 @@
       </button>
 
 
-        <form class="d-flex" action="{% url 'home' %}" method="GET">
-            <input class="form-control me-2" name='q' type="search" placeholder="Search" aria-label="Search">
-        </form>
+       
 
 
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -21,7 +19,7 @@
             <a class="nav-link" href="{% url 'logout' %}">logout</a>
           </li>
           <li>
-            <a href="{% url 'user_profile' user.id %}" class="nav-link">Hey {{ user.username }}</a>
+            <a href="{% url 'user_profile' user.id %}" class="nav-link">jambo,  {{ user.username }}</a>
           </li>
           {% else %}
           <li class="nav-item">
@@ -30,5 +28,9 @@
           {% endif %}          
         </ul>
       </div>
+
+      <form class="d-flex" action="{% url 'home' %}" method="GET">
+        <input class="form-control me-2" name='q' type="search" placeholder="Search" aria-label="Search">
+       </form>
     </div>
   </nav>

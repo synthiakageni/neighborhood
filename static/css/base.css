@@ -1,12 +1,12 @@
 body {
-    background-color: aquamarine;
+    background-color: #FDD2BF;
     font-family: 'Montserrat', sans-serif;
     color: black;
 }
 
 
 body > nav {
-    background-color: var(--antwerp-blue);
+    background-color: #8236CB;
     color: whitesmoke;
 }
 
@@ -19,4 +19,27 @@ body > nav > div > a {
 
 body > nav > div > a:hover {
     color: whitesmoke;
+}
+
+
+#navbarNavDropdown > ul > li > a {
+    color: wheat;
+}
+
+
+body > div > div > div:nth-child(1) > div> div.user-profile > img {
+    border-radius: 5px;
+}
+
+
+.user-profile img {
+    width: 60px;
+    height: 40px;
+}
+
+
+body > div > div > div:nth-child(3) > div > div > div:nth-child(1) > img {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
 }

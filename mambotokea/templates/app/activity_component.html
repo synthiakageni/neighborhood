@@ -6,7 +6,6 @@
         <div class="user-profile">
             <img src="{{ post.user.profile_pic.url }}" alt="">
             <small><a href="{% url 'user_profile' post.user.id %}">@{{ post.user.name }}</a> {{ post.created | timesince }}</small>
-
         </div>
     
         <small>replied to '{{ post.hood }}'</small>

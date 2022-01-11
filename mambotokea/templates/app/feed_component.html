@@ -1,8 +1,7 @@
 <div>
     {% for hood in hoods %} 
 
-        <div>
-        
+        <div>   
             
             
 
@@ -13,7 +12,7 @@
             <small> <i style="color: black;">Location: </i>{{hood.location.name}}</small><br>
             <a href="{% url 'join_hood' hood.id %}"><span  style="background-color: plum;">join Neighbourbood</span></a>
             <a href="{% url 'quit_hood' hood.id  %}"><span class="badge bg-warning">Exit Neighbourbood</span></a>            
-{% if request.user == hood.host %}
+            {% if request.user == hood.host %}
                 <a href="{% url 'update_hood' hood.id %}"><span class="badge bg-secondary">edit</span></a>
                 <a href="{% url 'delete_hood' hood.id %}"><span class="badge bg-danger">delete</span></a>
                 <!-- <span class="badge bg-success">Success</span> -->
